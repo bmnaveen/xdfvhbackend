@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const router=expres.Router();
 const auth=require("../middleware/auth")
 const newToken = (user) => {
+
     return jwt.sign({ user }, process.env.JWT_SECRET_KEY);
   };
 router.post("/signup",async(req,res)=>{
