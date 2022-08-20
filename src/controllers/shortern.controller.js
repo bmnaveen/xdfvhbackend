@@ -11,7 +11,7 @@ try{
 
 
 const final= await Shorten.create({
-    shorturl:`http://localhost:5000/${shortUrl}`,
+    shorturl:`https://supplynote.herokuapp.com/${shortUrl}`,
     longurl:req.body.long,
     userid:req.user[0]._id
 });
@@ -29,7 +29,7 @@ router.get("/:short",async(req,res)=>{
     try{
      
     
-  const final=await Shorten.find({"shorturl":`https://suppynote.herokuapp.com/${req.params.short}`}).lean().exec();
+  const final=await Shorten.find({"shorturl":`https://supplynote.herokuapp.com/${req.params.short}`}).lean().exec();
   
   return res.redirect(final[0].longurl);
    
