@@ -16,7 +16,7 @@ const final= await Shorten.create({
     userid:req.user[0]._id
 });
 
-return res.send(final.shorturl)
+return res.status(200).send(final.shorturl)
 }catch(err){
   console.log(err)
 }
